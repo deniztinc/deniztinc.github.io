@@ -4,164 +4,382 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deniz Tinc</title>
-
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #222;
-    }
-
-    header {
-      background: #0f5310;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-
-    header p {
-      margin-top: 10px;
-      opacity: 0.9;
-    }
-
-    nav {
-      margin-top: 20px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 500;
-    }
-
-    main {
-      max-width: 900px;
-      margin: -30px auto 40px;
-      background: white;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    h2 {
-      margin-bottom: 10px;
-    }
-
-    .projects {
-      display: grid;
-      gap: 20px;
-    }
-
-    .card {
-      border: 1px solid #eee;
-      padding: 20px;
-      border-radius: 12px;
-      background: #fafafa;
-    }
-
-    .card h3 {
-      margin-top: 0;
+      background: #f6f7f4;
+      color: #1f1f1f;
+      line-height: 1.6;
     }
 
     a {
       color: #0f5310;
+      text-decoration: none;
     }
 
-    .contact a {
-      margin-right: 10px;
+    a:hover {
+      text-decoration: underline;
     }
 
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #042e04, #0f5310);
+      color: white;
+      padding: 80px 20px 70px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 48px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 700px;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .button-primary,
+    .button-secondary {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: #ffc200;
+      color: #1f1f1f;
+    }
+
+    .button-primary:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+    }
+
+    .button-secondary:hover {
+      text-decoration: none;
+      background: rgba(255,255,255,0.08);
+    }
+
+    nav {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    main {
+      padding: 40px 0 60px;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 28px;
+      color: #042e04;
+    }
+
+    .lead {
+      font-size: 17px;
+      color: #333;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .project-card,
+    .blog-card,
+    .mini-card {
+      background: #fafbf8;
+      border: 1px solid #e8ece5;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .project-card {
+      grid-column: span 12;
+    }
+
+    .project-card h3,
+    .blog-card h3,
+    .mini-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .project-meta {
+      color: #5b5b5b;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .impact {
+      margin-top: 12px;
+      padding-left: 18px;
+    }
+
+    .impact li {
+      margin-bottom: 8px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .contact-links a {
+      margin-right: 16px;
+      font-weight: 600;
+    }
+
+    .resume-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      background: #fafbf8;
+      border: 1px solid #e8ece5;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    footer {
+      padding: 10px 0 40px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Deniz Tinc</h1>
-  <p>Product Manager · Developer · Problem Solver</p>
+  <header>
+    <div class="container">
+      <div class="hero">
+        <h1>Deniz Tinc</h1>
+        <p>
+          Product Manager with a background in cognitive science, philosophy, and technology.
+          I work across product strategy, UX, systems thinking, and execution to turn messy
+          problems into clear, useful products.
+        </p>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+        <div class="hero-buttons">
+          <a class="button-primary" href="#projects">View Projects</a>
+          <a class="button-secondary" href="resume.pdf" target="_blank">Download Resume</a>
+        </div>
 
-<main>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#resume">Resume</a>
+          <a href="#blog">Writing</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I’m a Product Manager with a background in cognitive science, philosophy, and technology.
-    I focus on turning complex problems into structured systems and building products that are
-    both functional and intuitive.
-  </p>
-  <p>
-    I currently work on Agriprix, an agritech startup, where I lead product development across
-    UX, feature planning, and system design.
-  </p>
-</section>
+  <main class="container">
 
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="projects">
-
-    <div class="card">
-      <h3>Agriprix</h3>
-      <p>
-        Led product development for a B2B agritech platform connecting buyers and suppliers.
-        Worked on UX flows, logistics scenarios, and backend coordination.
+    <section id="about" class="section-card">
+      <h2>About Me</h2>
+      <p class="lead">
+        I’m currently working on Agriprix, an early-stage agritech platform focused on improving
+        how buyers and suppliers connect, transact, and operate. My work sits at the intersection
+        of product development, UX, operations, and technical problem-solving.
       </p>
+      <p>
+        I’m especially interested in product roles where I can bring structure to ambiguity, work
+        closely with technical teams, improve user experience, and build products with clear,
+        thoughtful logic underneath them.
+      </p>
+      <p>
+        My background in cognitive science and philosophy shaped how I think: I care about user
+        behavior, decision-making, edge cases, and the systems behind good products, not just the surface.
+      </p>
+    </section>
+
+    <section id="projects" class="section-card">
+      <h2>Projects</h2>
+
+      <div class="grid">
+        <div class="project-card">
+          <h3>Agriprix</h3>
+          <div class="project-meta">Product Management · UX · Systems Design · Startup Execution</div>
+          <p>
+            Led product development work for a B2B agritech platform connecting buyers and suppliers.
+            Worked across backlog structure, feature planning, marketplace flows, logistics scenarios,
+            UI/UX decisions, and cross-functional coordination with engineering.
+          </p>
+          <ul class="impact">
+            <li>Defined product requirements and system flows across buyer, supplier, and logistics experiences.</li>
+            <li>Turned scattered bugs, feedback, and feature requests into structured planning documentation.</li>
+            <li>Worked closely with technical workflows and API-level validation to improve execution clarity.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3>OCR Invoice and Waybill Automation</h3>
+          <div class="project-meta">Python · Tesseract OCR · SQL · Process Automation</div>
+          <p>
+            Built an automation workflow during my internship at ICE Technologies to extract structured
+            data from scanned invoices and waybills and reduce manual processing effort.
+          </p>
+          <ul class="impact">
+            <li>Used OCR to process difficult scanned documents and convert them into structured output.</li>
+            <li>Created SQL support for internal process automation and data handling.</li>
+            <li>Worked on a practical system that improved efficiency and reduced repetitive manual work.</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <h3>Personal Portfolio Website</h3>
+          <div class="project-meta">HTML · CSS · GitHub Pages</div>
+          <p>
+            Designed and built this website from scratch as a clean professional portfolio for job
+            applications, project presentation, and future writing.
+          </p>
+          <ul class="impact">
+            <li>Built and deployed the site independently using GitHub Pages.</li>
+            <li>Created a structure that supports projects, resume access, and future blog content.</li>
+            <li>Used simple frontend fundamentals to create a clean, maintainable base.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <section id="resume" class="section-card">
+        <h2>Resume</h2>
+        <div class="resume-box">
+          <div>
+            <p>
+              Download my resume for a fuller view of my experience across product, UX, technical
+              collaboration, and early-stage execution.
+            </p>
+          </div>
+          <div>
+            <a class="button-primary" href="resume.pdf" target="_blank">Open Resume</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <h2>Focus Areas</h2>
+        <div class="mini-card">
+          <h3>What I work best on</h3>
+          <p>
+            Product strategy, roadmap structure, UX thinking, operations-heavy product work,
+            documentation, user flows, and ambiguous problem spaces that need clarity.
+          </p>
+        </div>
+      </section>
     </div>
 
-    <div class="card">
-      <h3>OCR Invoice Automation</h3>
-      <p>
-        Built an OCR-based system using Tesseract and SQL to extract structured data from
-        invoices and reduce manual processing time.
+    <section id="blog" class="section-card">
+      <h2>Writing</h2>
+      <p class="lead">
+        I may expand this section into a personal blog later. For now, this is where I’ll share
+        thoughts on product, systems, user behavior, and startup building.
       </p>
+
+      <div class="grid">
+        <div class="blog-card">
+          <h3>Coming soon</h3>
+          <p>
+            Topics I’d like to write about include product thinking, UX edge cases, startup execution,
+            and what actually breaks when systems meet real users.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-card">
+      <h2>Contact</h2>
+      <p>Email: your@email.com</p>
+      <div class="contact-links">
+        <a href="https://github.com/deniztinc" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-link-here" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Deniz Tinc
     </div>
-
-    <div class="card">
-      <h3>Personal Website</h3>
-      <p>
-        Designed and built this website from scratch using HTML and CSS.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<section id="resume">
-  <h2>Resume</h2>
-  <p>
-    <a href="resume.pdf" target="_blank">Download my resume</a>
-  </p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: deniztn16@email.com</p>
-  <div class="contact">
-    <a href="https://github.com/deniztinc" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/deniztinc/" target="_blank">LinkedIn</a>
-  </div>
-</section>
-
-</main>
+  </footer>
 
 </body>
 </html>
