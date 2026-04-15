@@ -1,45 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deniz Tinc</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: #0f5310;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      background: #fafafa;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <h1>Deniz Tinc</h1>
-    <p>Aspiring Product Manager | Developer | Problem Solver</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hi, I’m Deniz. I’m interested in product, technology, and building useful things.
-      </p>
-    </section>
+<header>
+  <h1>Deniz Tinc</h1>
+  <p>Product Manager · Developer · Problem Solver</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>Project section coming soon.</p>
-    </section>
+<main>
 
-    <section id="resume">
-      <h2>Resume</h2>
-      <p>Resume section coming soon.</p>
-    </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Hi, I’m Deniz Tinc. I’m a Product Manager with a background in cognitive science,
+    philosophy, and technology.
+  </p>
+  <p>
+    I currently work on Agriprix, an agritech startup focused on improving how buyers
+    and suppliers connect and operate.
+  </p>
+  <p>
+    I’m interested in product roles where I can turn messy problems into clear systems
+    and build useful, thoughtful products.
+  </p>
+</section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: your@email.com</p>
-    </section>
-  </main>
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>Agriprix</h3>
+    <p>
+      Product development and UX work for an early-stage agritech platform connecting buyers and suppliers.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>OCR Invoice Automation</h3>
+    <p>
+      Built a system using Tesseract OCR and SQL to extract data from invoices and reduce manual processing.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Personal Website</h3>
+    <p>
+      Designed and built this portfolio website using HTML and CSS.
+    </p>
+  </div>
+
+</section>
+
+<section id="resume">
+  <h2>Resume</h2>
+  <p>
+    <a href="resume.pdf" target="_blank">Download my resume</a>
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <p>
+    <a href="https://github.com/deniztinc" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+  </p>
+</section>
+
+</main>
+
 </body>
 </html>
